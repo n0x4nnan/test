@@ -1,12 +1,21 @@
 public class example {
     public static void main(String[] args) {
         System.out.println("Use the following mapping table to specify a cell using numbers from 1 to 9:");
-
+        printTableMapping();
         char[][] gameTable = {
                 {' ', ' ', ' '},
                 {' ', ' ', ' '},
                 {' ', ' ', ' '}
         };
+    }
+
+    private static void printTableMapping() {
+        char[][] mappingTable = {
+                {'7', '8', '9'},
+                {'4', '5', '6'},
+                {'1', '2', '3'}
+        };
+        printGameTable(mappingTable);
     }
 
     private static void printGameTable(char[][] gameTable) {
