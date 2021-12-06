@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class example {
     public static void main(String[] args) {
         System.out.println("Use the following mapping table to specify a cell using numbers from 1 to 9:");
@@ -7,6 +9,7 @@ public class example {
                 {' ', ' ', ' '},
                 {' ', ' ', ' '}
         };
+
     }
 
     private static void printTableMapping() {
@@ -27,5 +30,17 @@ public class example {
             System.out.println("|");
         }
         System.out.println("-------------");
+    }
+
+    private static void makeComputerMove(char[][] gameTable) {
+        Random random = new Random();
+        while (true) {
+            int row = random.nextInt(3);
+            int col = random.nextInt(3);
+            if (gameTable[row][col] == ' ') {
+                gameTable[row][col] = 'O';
+                return;
+            }
+        }
     }
 }
