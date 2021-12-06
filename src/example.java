@@ -43,4 +43,26 @@ public class example {
             }
         }
     }
+
+    private static boolean makeUserMoveToCell(char[][] gameTable, char digit) {
+        char[][] mappingTable = {
+                {'7', '8', '9'},
+                {'4', '5', '6'},
+                {'1', '2', '3'}
+        };
+        for (int i = 0; i < mappingTable.length; i++) {
+            for (int j = 0; j < mappingTable[i].length; j++) {
+                if (mappingTable[i][j] == digit) {
+                    if (gameTable[i][j] == ' ') {
+                        gameTable[i][j] = 'X';
+                        return true;
+                    } else {
+                        System.out.println("Can't make a move, because the cell is not free! Try again!");
+                        return false;
+                    }
+                }
+            }
+        }
+        return false;
+    }
 }
